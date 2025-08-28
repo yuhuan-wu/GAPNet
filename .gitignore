@@ -1,0 +1,15 @@
+results_all/
+__pycache__/
+.vscode/
+.ipynb_checkpoints/
+pretrained/
+data*
+results*
+*.zip
+*.pth
+outputs*
+snaps/
+data
+.git
+test_results*
+*.pdf
