@@ -43,6 +43,12 @@ pip install fvcore
 
 ## Pretrained models
 
+[[gapnet.pth]](https://github.com/yuhuan-wu/GAPNet/releases/download/pretrained/gapnet.pth)
+[[gapnet_video.pth]](https://github.com/yuhuan-wu/GAPNet/releases/download/pretrained/gapnet_video.pth)
+[[imagenet pretrained mobilenetv2]](https://github.com/yuhuan-wu/GAPNet/releases/download/pretrained/mobilenet_v2-b0353104.pth)
+
+[(can manually download them from the github release page)](https://github.com/yuhuan-wu/GAPNet/releases/tag/pretrained)
+
 Place weights under ./pretrained/:
 
 - gapnet*.pth: trained checkpoints for SOD/VSOD. Use them directly with the provided test scripts:
