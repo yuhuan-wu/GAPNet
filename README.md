@@ -8,7 +8,7 @@ Core ideas:
 - Cross-Scale Attention (CSA) for high-level feature fusion and a lightweight global self-attention head over 1/32 features.
 - Unified image + video: two-stream RGB+flow variant for VSOD with hierarchical fusion.
 
-Paper: see [25MIR_GAPNet.pdf](25MIR_GAPNet.pdf).
+Paper: see [25MIR_GAPNet.pdf](https://yuhuan-wu.com/files/[25MIR]%20GAPNet.pdf).
 
 
 
