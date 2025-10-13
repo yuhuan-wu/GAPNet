@@ -2,6 +2,8 @@
 
 This repository contains the official PyTorch implementation of GAPNet for image and video salient object detection (SOD/VSOD). GAPNet adopts a granularity-aware paradigm that supervises multi-scale decoder side-outputs with matching label granularities and employs efficient GPC/CSA modules plus a lightweight global self-attention head.
 
+The paper has been accepted by Machine Intelligence Research (MIR) 2025.
+
 Core ideas:
 - Granularity-aware deep supervision: high-level side-output supervised by center saliency (low granularity), low-level side-output supervised by boundary+others (high granularity), final output supervised by full saliency.
 - Granular Pyramid Convolution (GPC) for efficient low-scale feature fusion.
