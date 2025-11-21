@@ -8,17 +8,21 @@ class Dataset(torch.utils.data.Dataset):
     '''
     Class to load the dataset
     '''
-    def __init__(self, data_dir, dataset, transform=None, process_label=True, ignore_index=False):
+    def __init__(self, data_dir, dataset, transform=None, process_label=True, ignore_index=False, use_flow=False):
         self.transform = transform
         self.process_label = process_label
         self.ignore_index = ignore_index
         self.img_list = list()
         self.msk_list = list()
-        with open(data_dir + dataset + '.txt', 'r') as lines:
+        self.flow_list = list()
+        self.use_flow = use_flow
+        with open(data_dir + dataset + '.lst', 'r') as lines:
             for line in lines:
                 line_arr = line.split()
                 self.img_list.append(data_dir + line_arr[0].strip())
-                self.msk_list.append(data_dir +  line_arr[1].strip())
+                self.msk_list.append(data_dir +  line_arr[-1].strip())
+                if self.use_flow:
+                    self.flow_list.append(data_dir + line_arr[1].strip())
 
     def __len__(self):
         return len(self.img_list)
@@ -26,10 +30,14 @@ class Dataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         image = cv2.imread(self.img_list[idx])
         label = cv2.imread(self.msk_list[idx], 0)
+        if self.use_flow:
+            flow = cv2.imread(self.flow_list[idx])
+        else:
+            flow = None
         # print(self.transform)
         if self.transform:
             #try:
-            [image, label] = self.transform(image, label)
+            [image, label, flow] = self.transform(image, label, flow)
             #except AttributeError:
             #    print(self.img_list[idx], self.msk_list[idx])
 
@@ -38,7 +46,10 @@ class Dataset(torch.utils.data.Dataset):
             label = self.gt2gt_ms(label)
             
         # print("dataset", image.shape)
-        return image, label
+        if self.use_flow:
+            return image, flow, label
+        else:
+            return image, label
 
     def get_img_info(self, idx):
         image = cv2.imread(self.img_list[idx])
