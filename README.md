@@ -64,8 +64,8 @@ Note: VGG pretrained weights are not used in this release.
 ## Prepare the data
 
 Download and unzip:
-- SOD datasets: [HF: SOD_datasets.zip](https://huggingface.co/datasets/yuhuan-wu/GAPNet_datasets/resolve/main/SOD_datasets.zip)
-- VSOD datasets: [HF: VSOD_datasets.zip](https://huggingface.co/datasets/yuhuan-wu/GAPNet_datasets/resolve/main/VSOD_datasets.zip)
+- SOD datasets: [HF: SOD_datasets.zip](https://huggingface.co/datasets/yuhuan-wu/GAPNet_datasets/resolve/main/SOD_datasets.zip) [Baidu Pan](https://pan.baidu.com/s/1CRkZ_LvF5yGaeTa84H5H3Q?pwd=yhwu)
+- VSOD datasets: [HF: VSOD_datasets.zip](https://huggingface.co/datasets/yuhuan-wu/GAPNet_datasets/resolve/main/VSOD_datasets.zip) [Baidu Pan](https://pan.baidu.com/s/1CRkZ_LvF5yGaeTa84H5H3Q?pwd=yhwu)
 
 Place them as:
 
